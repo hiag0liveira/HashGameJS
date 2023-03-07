@@ -16,6 +16,11 @@ function initializeGame() {
   document.querySelector('h2').innerHTML = 'Vez de: <span id="turnPlayer"></span>'
   updateTitle()
   // Limpa o tabuleiro (caso seja necessário) e adiciona os eventos de clique
+ 
+  resetBoard()
+}
+
+function resetBoard() {
   boardRegions.forEach(function (element) {
     element.classList.remove('win')
     element.innerText = ''
@@ -23,20 +28,21 @@ function initializeGame() {
     element.addEventListener('click', handleBoardClick)
   })
 }
+
 // Verifica se existem três regiões iguais em sequência e devolve as regiões
 function getWinRegions() {
   const winRegions = []
-  if (vBoard[0][0] && vBoard[0][0] === vBoard[0][1] && vBoard[0][0] === vBoard[0][2])
+  if (isWinningRow(0))
     winRegions.push("0.0", "0.1", "0.2")
-  if (vBoard[1][0] && vBoard[1][0] === vBoard[1][1] && vBoard[1][0] === vBoard[1][2])
+  if (isWinningRow(1))
     winRegions.push("1.0", "1.1", "1.2")
-  if (vBoard[2][0] && vBoard[2][0] === vBoard[2][1] && vBoard[2][0] === vBoard[2][2])
+  if (isWinningRow(2))
     winRegions.push("2.0", "2.1", "2.2")
-  if (vBoard[0][0] && vBoard[0][0] === vBoard[1][0] && vBoard[0][0] === vBoard[2][0])
+  if (isWinningColumn(0))
     winRegions.push("0.0", "1.0", "2.0")
-  if (vBoard[0][1] && vBoard[0][1] === vBoard[1][1] && vBoard[0][1] === vBoard[2][1])
+  if (isWinningColumn(1))
     winRegions.push("0.1", "1.1", "2.1")
-  if (vBoard[0][2] && vBoard[0][2] === vBoard[1][2] && vBoard[0][2] === vBoard[2][2])
+  if (isWinningColumn(2))
     winRegions.push("0.2", "1.2", "2.2")
   if (vBoard[0][0] && vBoard[0][0] === vBoard[1][1] && vBoard[0][0] === vBoard[2][2])
     winRegions.push("0.0", "1.1", "2.2")
@@ -44,6 +50,15 @@ function getWinRegions() {
     winRegions.push("0.2", "1.1", "2.0")
   return winRegions
 }
+
+function isWinningRow(row) {
+  return vBoard[row][0] && vBoard[row][0] === vBoard[row][1] && vBoard[row][0] === vBoard[row][2]
+}
+
+function isWinningColumn(column) {
+  return vBoard[0][column] && vBoard[0][column] === vBoard[1][column] && vBoard[0][column] === vBoard[2][column]
+}
+
 // Desabilita uma região do tabuleiro para que não seja mais clicável
 function disableRegion(element) {
   element.classList.remove('cursor-pointer')
@@ -61,18 +76,10 @@ function handleWin(regions) {
 function handleBoardClick(ev) {
   // Obtém os índices da região clicada
   const span = ev.currentTarget
-  const region = span.dataset.region // N.N
-  const rowColumnPair = region.split('.') // ["N", "N"]
-  const row = rowColumnPair[0]
-  const column = rowColumnPair[1]
-  // Marca a região clicada com o símbolo do jogador
-  if (turnPlayer === 'player1') {
-    span.innerText = 'X'
-    vBoard[row][column] = 'X'
-  } else {
-    span.innerText = 'O'
-    vBoard[row][column] = 'O'
-  }
+  const [row, column] = span.dataset.region.split('.') // ["N", "N"]
+  
+  fillElementWithPlayerSymbol(span, row, column)
+  
   // Limpa o console e exibe nosso tabuleiro virtual
   console.clear()
   console.table(vBoard)
@@ -89,5 +96,16 @@ function handleBoardClick(ev) {
     document.querySelector('h2').innerHTML = 'Empate!'
   }
 }
+
+function fillElementWithPlayerSymbol(el, row, column) {
+  if (turnPlayer === 'player1') {
+    el.innerText = 'X'
+    vBoard[row][column] = 'X'
+  } else {
+    el.innerText = 'O'
+    vBoard[row][column] = 'O'
+  }
+}
+
 // Adiciona o evento no botão que inicia o jogo
 document.getElementById('start').addEventListener('click', initializeGame)
