@@ -17,13 +17,13 @@ Este é um jogo da velha simples implementado em JavaScript, HTML e CSS. O jogo 
  ## Estrutura do projeto
  
 |- css/
-|   |- style.css         # arquivo CSS para estilização do jogo
+|   |- style.css         arquivo CSS para estilização do jogo
 |
 |- js/
-|   |- script.js         # arquivo JavaScript com a lógica do jogo
+|   |- script.js          arquivo JavaScript com a lógica do jogo
 |
-|- index.html            # arquivo HTML principal com o tabuleiro do jogo
-|- README.md             # este arquivo
+|- index.html             arquivo HTML principal com o tabuleiro do jogo
+|- README.md              este arquivo
 
 ## 🌳 Contribuindo
 Se você gostaria de contribuir com este projeto, por favor, faça um fork do repositório e faça suas alterações em um novo branch. 
