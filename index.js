@@ -59,7 +59,6 @@ function disableBoardAll() {
   })
 }
 
-}
 // Pinta as regiões onde o jogador venceu e mostra seu nome na tela
 function handleWin(regions) {
   regions.forEach(function (region) {
