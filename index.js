@@ -43,6 +43,7 @@ function getWinRegions() {
     winRegions.push("0.0", "1.1", "2.2")
   if (vBoard[0][2] && vBoard[0][2] === vBoard[1][1] && vBoard[0][2] === vBoard[2][0])
     winRegions.push("0.2", "1.1", "2.0")
+  disableBoardAll()
   return winRegions
 }
 // Desabilita uma região do tabuleiro para que não seja mais clicável
