@@ -50,13 +50,6 @@ function disableRegion(element) {
   element.classList.remove('cursor-pointer')
   element.removeEventListener('click', handleBoardClick)
 }
-// Desabilita click no tabuleiro apos vencer
-function disableBoardAll() {
-  boardRegions.forEach(function (element) {
-     element.classList.remove('cursor-pointer')
-     element.removeEventListener('click', handleBoardClick)
-  })
-}
 
 // Pinta as regiões onde o jogador venceu e mostra seu nome na tela
 function handleWin(regions) {
@@ -65,7 +58,6 @@ function handleWin(regions) {
   })
   const playerName = document.getElementById(turnPlayer).value
   document.querySelector('h2').innerHTML = playerName + ' venceu!'
-  disableBoardAll() 
 }
 
 function handleBoardClick(ev) {
