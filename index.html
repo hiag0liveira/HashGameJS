@@ -6,27 +6,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jogo da Velha</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
   <script src="index.js" defer></script>
 </head>
 <body>
-  <h1>Jogo da Velha</h1>
-  <hr>
-  <label for="player1">X</label>
-  <input type="text" id="player1" placeholder="Nome do Jogador 1">
-  <label for="player2">O</label>
-  <input type="text" id="player2" placeholder="Nome do Jogador 2">
-  <button id="start">Começar!</button>
-  <h2>Vez de: <span id="turnPlayer"></span></h2>
-  <section id="gameBoard">
-    <span class="cursor-pointer" data-region="0.0"></span>
-    <span class="cursor-pointer" data-region="0.1"></span>
-    <span class="cursor-pointer" data-region="0.2"></span>
-    <span class="cursor-pointer" data-region="1.0"></span>
-    <span class="cursor-pointer" data-region="1.1"></span>
-    <span class="cursor-pointer" data-region="1.2"></span>
-    <span class="cursor-pointer" data-region="2.0"></span>
-    <span class="cursor-pointer" data-region="2.1"></span>
-    <span class="cursor-pointer" data-region="2.2"></span>
-  </section>
+  <div class="wrapper">
+    <div class="toggle">
+      <input class="toggle-input" type="checkbox" />
+      <div class="toggle-bg"></div>
+      <div class="toggle-switch">
+        <div class="toggle-switch-figure"></div>
+        <div class="toggle-switch-figureAlt"></div>
+      </div>  
+    </div>
+  </div>
+  <div class="central">
+    <h1 id="title">Jogo da Velha</h1>
+    <div id="namePlayers">
+      <label for="player1">X</label>
+      <input type="text" id="player1" placeholder="Nome do Jogador 1">
+      <label for="player2">O</label>
+      <input type="text" id="player2" placeholder="Nome do Jogador 2">
+    </div>
+    <button id="start">Começar!</button>
+    <h2>Vez de: <span id="turnPlayer"></span></h2>
+    <section id="gameBoard">
+      <span class="cursor-pointer" data-region="0.0"></span>
+      <span class="cursor-pointer" data-region="0.1"></span>
+      <span class="cursor-pointer" data-region="0.2"></span>
+      <span class="cursor-pointer" data-region="1.0"></span>
+      <span class="cursor-pointer" data-region="1.1"></span>
+      <span class="cursor-pointer" data-region="1.2"></span>
+      <span class="cursor-pointer" data-region="2.0"></span>
+      <span class="cursor-pointer" data-region="2.1"></span>
+      <span class="cursor-pointer" data-region="2.2"></span>
+    </section>
+    <div class="time">
+      <h1>Marcador de Tempo</h1>
+      <div>
+        <img src="assets/images/clock.svg" class="clock">
+        <img src="assets/images/hour.svg" class="hour">
+        <img src="assets/images/minute.svg" class="minute">
+      </div>
+    </div>
+  </div>
 </body>
 </html>

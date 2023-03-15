@@ -1,5 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
 body {
   font-family: sans-serif;
+  background-color: #000000;
+  color: white;
+}
+.central{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#title{
+  text-align: center;
+  font-family: 'Carter One', cursive;
 }
 
 #gameBoard {
@@ -17,6 +31,8 @@ body {
   display: grid;
   place-content: center;
   font-size: 5rem;
+  font-family: 'Carter One', cursive;
+  color: #000000;
 }
 
 #gameBoard span.win {
@@ -25,4 +41,37 @@ body {
 
 .cursor-pointer {
   cursor: pointer;
+}
+.time{
+  width: 200px;
+  height: 150px;
+  position: relative;
+  padding-bottom: 150px;
+  font-size: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clock,
+.hour,
+.minute{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.minute{
+  animation: girarPonteiro 60s linear infinite;
+}
+
+.hour{
+  animation: girarPonteiro 3600s linear infinite;
+}
+
+@keyframes girarPonteiro{
+  from {transform: rotateZ(0deg);}
+  to {transform: rotateZ(360deg);}
 }
