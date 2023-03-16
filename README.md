@@ -10,6 +10,7 @@ Este é um jogo da velha simples implementado em JavaScript, HTML e CSS. O jogo 
  * O próximo jogador fará sua jogada, e assim por diante, até que um jogador vença ou o jogo termine em empate.
  * Se um jogador vencer, uma mensagem de vitória será exibida.
  * Para iniciar um novo jogo, clique no botão "Novo Jogo".
+ 
 
 ## Funcionamento
   
