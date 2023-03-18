@@ -1,5 +1,5 @@
 # ❌ Jogo Da Velha em JavaScript ⭕
-
+ 
 Este é um jogo da velha simples implementado em JavaScript, HTML e CSS. O jogo pode ser jogado por dois jogadores, que alternam entre "X" e "O" para marcar suas jogadas.
 
 ## ⏯ Como Jogar
