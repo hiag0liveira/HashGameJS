@@ -4,7 +4,7 @@ Este é um jogo da velha simples implementado em JavaScript, HTML e CSS. O jogo 
 
 ## ⏯ Como Jogar
 
- * Abra o arquivo index.html no seu navegador ou pelo link https://hiag0liveira.github.io/JogoDaVelhaJS/
+ * Abra o arquivo index.html no seu navegador ou pelo link https://hiag0liveira.github.io/HashGameJS/
  * Inicie colando o nome dos dois jogadores
  * Clique em qualquer um dos quadrados vazios do tabuleiro para fazer sua jogada.
  * O próximo jogador fará sua jogada, e assim por diante, até que um jogador vença ou o jogo termine em empate.
